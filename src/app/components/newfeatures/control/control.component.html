@@ -1,0 +1,38 @@
+<p-splitter [style]="{ height: '300px' }" styleClass="mb-5">
+    <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center flex-column">
+            <div class="card flex justify-content-center" style="margin-bottom: 1em;">
+                <p-selectButton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"></p-selectButton>
+            </div>
+            @if (value=='on') {
+                <div class="small-block" style="background-color: red;"></div>
+            }
+            @else {
+                <div class="small-block" style="background-color: blue;"></div>
+            }
+        </div>
+    </ng-template>
+    <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center">
+            <img src="../../../../assets/images/controlflow.png" style="width: 90%;" alt="">
+        </div>
+    </ng-template>
+</p-splitter>
+
+<p-splitter [style]="{ height: '300px' }" styleClass="mb-5">
+    <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center flex-column">
+            @for (count of counter; track counter) {
+                <div class="small-block" style="background-color: black; color: white; text-align: center;">{{signalValue}}</div>
+            }@empty {
+                <p> Array is empty </p>
+            }
+        </div>
+    </ng-template>
+    <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center">
+            <img src="../../../../assets/images/forloop.png" style="width: 90%;" alt="">
+        </div>
+    </ng-template>
+</p-splitter>
+

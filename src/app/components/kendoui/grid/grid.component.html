@@ -1,0 +1,20 @@
+<kendo-grid [data]="gridData | async" [pageable]="true" [pageSize]="state.take" [skip]="state.skip" [sortable]="true"
+    [sort]="state.sort" [filterable]="true" [filter]="state.filter" [groupable]="true" [group]="state.group"
+    [loading]="this.odataService.loading" (dataStateChange)="onStateChange($event)">
+    <ng-template kendoGridToolbarTemplate>
+        <button type="button" kendoGridExcelCommand [svgIcon]="fileExcelIcon">
+            Export to Excel
+        </button>
+        <button kendoGridPDFCommand>
+            <span class="k-icon k-font-icon k-i-file-pdf"></span>Export to PDF
+        </button>
+    </ng-template>
+    <kendo-grid-column field="ProductName" title="Product Name" filter="text"></kendo-grid-column>
+    <kendo-grid-column field="UnitPrice" title="Price" filter="numeric"></kendo-grid-column>
+    <kendo-grid-column field="Discontinued" title="Discontinued" filter="boolean"></kendo-grid-column>
+    <kendo-grid-column field="UnitsInStock" title="Units In Stock" filter="numeric"></kendo-grid-column>
+    <kendo-grid-excel fileName="Products.xlsx"></kendo-grid-excel>
+    <kendo-grid-pdf fileName="Products.pdf" [delay]="1000" [allPages]="true" paperSize="A4" [repeatHeaders]="true"
+        [landscape]="true">
+    </kendo-grid-pdf>
+</kendo-grid>

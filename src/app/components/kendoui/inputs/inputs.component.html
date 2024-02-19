@@ -1,0 +1,25 @@
+<p>TextBox</p>
+<!-- <kendo-floatinglabel text="First Name"> -->
+<kendo-textbox [style.width.px]="200" [clearButton]="true" [(ngModel)]="textboxValue"></kendo-textbox>
+<!-- </kendo-floatinglabel> -->
+
+<p>MaskedTextBox</p>
+<kendo-maskedtextbox [(ngModel)]="maskedValue" mask="9-000"></kendo-maskedtextbox>
+
+<p>NumericTextBox</p>
+<kendo-numerictextbox [(ngModel)]="numericValue"></kendo-numerictextbox>
+
+<p>Slider (value = {{ sliderValue }})</p>
+<kendo-slider [min]="min" [max]="max" [smallStep]="smallStep" [(ngModel)]="sliderValue"></kendo-slider>
+
+<p>Switch</p>
+<kendo-switch [(ngModel)]="switchValue" onLabel="True" offLabel="False" style="width: 71px;"></kendo-switch>
+
+<p>CheckBox (checked: {{ checked }})</p>
+<input type="checkbox" kendoCheckBox [(ngModel)]="checked" />
+
+<p>RadioButton (value: {{ radioValue }})</p>
+<div style="display: flex; justify-content: space-between; width: 40px;">
+    <input type="radio" name="demo" value="foo" kendoRadioButton [(ngModel)]="radioValue" />
+    <input type="radio" name="demo" value="bar" kendoRadioButton [(ngModel)]="radioValue" />
+</div>

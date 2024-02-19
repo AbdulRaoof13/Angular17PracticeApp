@@ -1,0 +1,86 @@
+<div class="flex flex-column gap-2">
+    <label for="username">Username</label>
+    <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value" />
+    <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+</div>
+
+<p-divider></p-divider>
+
+<p-inputGroup>
+    <p-inputGroupAddon>$</p-inputGroupAddon>
+    <input type="number" pInputText placeholder="Price" />
+    <p-inputGroupAddon>.00</p-inputGroupAddon>
+</p-inputGroup>
+
+<p-divider></p-divider>
+
+<div class="flex flex-column gap-2">
+    <label for="dropdown">Select Country</label>
+    <p-dropdown id="dropdown" [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
+        filterBy="name" [showClear]="true" placeholder="Select a Country">
+        <ng-template pTemplate="selectedItem">
+            <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                <!-- <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + selectedCountry.code.toLowerCase()" style="width: 18px"/> -->
+                <div>{{ selectedCountry.name }}</div>
+            </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+            <div class="flex align-items-center gap-2">
+                <!-- <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px"/> -->
+                <div>{{ country.name }}</div>
+            </div>
+        </ng-template>
+    </p-dropdown>
+</div>
+
+<p-divider></p-divider>
+
+<div class="flex flex-column gap-2">
+    <label for="chips">Enter your hobbies</label>
+    <p-chips id="chips" [(ngModel)]="value2" separator="," placeholder="Hint: cricket, singing, gaming"></p-chips>
+</div>
+
+<p-divider></p-divider>
+
+<div class="flex flex-column gap-2">
+    <label for="multiselect">Select Cities</label>
+    <p-multiSelect id="multiselect" placeholder="Select Cities" [options]="cities" [(ngModel)]="selectedCities" optionLabel="name"></p-multiSelect>
+</div>
+
+<p-divider></p-divider>
+
+<div class="flex flex-row" style="justify-content: space-between;">
+    <div class="card flex justify-content-center">
+    <p-selectButton [options]="stateOptions" [(ngModel)]="value3" optionLabel="label" optionValue="value"></p-selectButton>
+    </div>
+    <div class="flex flex-wrap align-items-center">
+        <p-rating [(ngModel)]="value4" [stars]="5">
+            <ng-template pTemplate="cancelicon">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px" height="25px" />
+            </ng-template>
+            <ng-template pTemplate="onicon">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px" height="25px" />
+            </ng-template>
+            <ng-template pTemplate="officon">
+                <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px" height="25px" />
+            </ng-template>
+        </p-rating>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        <div class="flex align-items-center gap-1">
+            <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+            <label for="ingredient1" class="ml-2">Cheese</label>
+        </div>
+        
+        <div class="flex align-items-center gap-1">
+            <p-radioButton name="pizza" value="Mushroom" [(ngModel)]="ingredient" inputId="ingredient2"></p-radioButton>
+            <label for="ingredient2" class="ml-2">Mushroom</label>
+        </div>
+    
+        <div class="flex align-items-center gap-1">
+            <p-radioButton name="pizza" value="Onion" [(ngModel)]="ingredient" inputId="ingredient4"></p-radioButton>
+            <label for="ingredient4" class="ml-2">Onion</label>
+        </div>
+    </div>
+</div>
+

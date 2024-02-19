@@ -1,0 +1,99 @@
+<div class="header">
+    <img src="../../../../assets/images/angular.png" width="50px" alt="">
+</div>
+
+<p-tabView [(activeIndex)]="activeIndex">
+    <p-tabPanel header="v11 to v12">
+        <ng-template pTemplate="content">
+            <div class="col flex align-items-center justify-content-center flex-column">
+                <ul>
+                    <li>Transition the Angular language service to Ivy </li>
+                    <li>Optimized build speed and bundle sizes with Angular CLI webpack 5 </li>
+                    <li>Migrate to ESLint from TSLint</li>
+                    <li>Faster apps by inlining critical styles in Universal applications</li>
+                    <li>Nullish Coalescing (??) {{nullish}}</li>
+                </ul>
+            </div>
+        </ng-template>
+    </p-tabPanel>
+    <p-tabPanel header="v12 to v13">
+        <ng-template pTemplate="content">
+            <div class="col flex align-items-center justify-content-center flex-column">
+                <ul>
+                    <li>Remove legacy View Engine.</li>
+                    <li>Deprecate and remove IE11 support</li>
+                    <li>Typescript 4.4 and Rxjs 7.4 support</li>
+                    <li>Improvements in build and other core functionalities</li>
+                </ul>
+            </div>
+
+        </ng-template>
+    </p-tabPanel>
+    <p-tabPanel header="v13 to v14">
+        <ng-template pTemplate="content">
+            <div class="col flex align-items-center justify-content-center flex-column">
+                <ul>
+                    <li>Intro to Standalone component with “standalone : true” flag
+                        <br><img src="../../../../assets/images/standalone-flag.webp" alt="">
+                    </li>
+                    <li>Modern CSS support</li>
+                    <li>Typescript 4.7</li>
+                    <li>Improvements in build and other core functionalities in support of standalone</li>
+                </ul>
+            </div>
+
+        </ng-template>
+    </p-tabPanel>
+    <p-tabPanel header="v14 to v15">
+        <ng-template pTemplate="content">
+            <div class="col flex align-items-center justify-content-center flex-column">
+                <ul>
+                    <li>Stable Standalone components.</li>
+                    <li>ESbuild support for faster build times (needs to be enabled in angular.json)</li>
+                    <li>11% bundle reduction because of router approach change in favor of standalone</li>
+                    <li>Introduction to provideRouter() and provideHttpClient() <br>
+                        <img src="../../../../assets/images/providers.png" alt="">
+                    </li>
+
+                </ul>
+            </div>
+
+        </ng-template>
+    </p-tabPanel>
+    <p-tabPanel header="v15 to v16">
+        <ng-template pTemplate="content">
+            <div class="col flex align-items-center justify-content-center flex-column">
+                <ul>
+                    <li>Reactive angular with signals.</li>
+                    <li>SSR new and improved </li>
+                    <li>Experimental Jest support </li>
+                    <li>Standalone components project with <span style="font-style: italic;">ng new --standalone</span>
+                    </li>
+                    <li>Required Inputs with<br>
+                        <img src="../../../../assets/images/input-req.png" alt="">
+                    </li>
+                    <li>Router Input (query parameters) without ActivatedRoutes <br>
+                        <img src="../../../../assets/images/input-router.png" alt="">
+                    </li>
+                </ul>
+            </div>
+
+        </ng-template>
+    </p-tabPanel>
+    <p-tabPanel header="v16 to v17">
+        <ng-template pTemplate="content">
+            <app-stand></app-stand>
+            <app-control></app-control>
+            <app-signals></app-signals>
+            <div class="col flex align-items-center justify-content-center flex-column">
+                <ul>
+                    <li>Deferrable views (developer preview) <br>
+                        <img src="../../../../assets/images/defer.png" style="width: 60%;" alt="">
+                    </li>
+                    <li>Improved SSR and build system (Vite with ESbuild)</li>
+                </ul>
+            </div>
+
+        </ng-template>
+    </p-tabPanel>
+</p-tabView>

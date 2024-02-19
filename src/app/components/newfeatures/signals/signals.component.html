@@ -1,0 +1,19 @@
+<p-splitter [style]="{ height: 'max-content' }" styleClass="mb-5">
+    <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center flex-column">
+            <h1>Signals</h1>
+            <ul>
+                <li>A signal is a wrapper around a value that notifies interested consumers when that value changes.</li>
+                <li>Signals can contain any value, from simple primitives to complex data structures.</li>
+                <li>Change the value: <input type="text" id="text" name="text" [(ngModel)]="value" (change)="signalService.myString.set(this.value)"></li>
+                <li>Value in control section for loop changes</li>
+            </ul>
+           
+        </div>
+    </ng-template>
+    <ng-template pTemplate>
+        <div class="col flex align-items-center justify-content-center">
+            <img src="../../../../assets/images/signal.png" style="width: 90%;" alt="">
+        </div>
+    </ng-template>
+</p-splitter>

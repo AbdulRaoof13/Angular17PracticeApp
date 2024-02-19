@@ -1,0 +1,58 @@
+<kendo-formfield showHints="always">
+    <kendo-label text="Favorite sport:">
+        <kendo-multiselect [data]="listItems" [(ngModel)]="value"></kendo-multiselect>
+    </kendo-label>
+    <!-- <kendo-formhint>Add your favourite sport, if it is not in the
+        list.</kendo-formhint> -->
+</kendo-formfield>
+
+<hr>
+<kendo-label text="AutoComplete">
+    <br />
+    <kendo-autocomplete [data]="listItems" placeholder="Your favorite sport">
+    </kendo-autocomplete>
+</kendo-label>
+
+<hr>
+<kendo-label text="DropDownList">
+    <br />
+    <kendo-dropdownlist [data]="listItems" value="Basketball">
+    </kendo-dropdownlist>
+</kendo-label>
+
+<hr>
+<kendo-label text="ComboBox">
+    <br />
+    <kendo-combobox [data]="listItems" value="Basketball">
+    </kendo-combobox>
+</kendo-label>
+
+<hr>
+<kendo-label text="MultiColumnComboBox">
+    <br />
+    <kendo-multicolumncombobox [data]="gridData" textField="name" valueField="id" placeholder="Select an employee">
+        <kendo-combobox-column field="name" title="Name" [width]="200">
+        </kendo-combobox-column>
+        <kendo-combobox-column field="title" title="Title" [width]="200">
+        </kendo-combobox-column>
+        <kendo-combobox-column field="phone" title="Phone" [width]="200">
+        </kendo-combobox-column>
+    </kendo-multicolumncombobox>
+</kendo-label>
+
+<hr>
+<kendo-label text="DropDownTree">
+    <br />
+    <kendo-dropdowntree kendoDropDownTreeExpandable [kendoDropDownTreeHierarchyBinding]="treeItems" textField="text"
+        valueField="id" childrenField="items" [value]="complexValue" [popupSettings]="{
+            width: '230px'
+          }" [expandedKeys]="['1']"></kendo-dropdowntree>
+</kendo-label>
+
+<hr>
+<kendo-label text="MultiSelectTree">
+    <br />
+    <kendo-multiselecttree kendoMultiSelectTreeExpandable [kendoMultiSelectTreeHierarchyBinding]="treeItems"
+        textField="text" valueField="id" childrenField="items" [expandedKeys]="['0']" [(value)]="complexArrayValue">
+    </kendo-multiselecttree>
+</kendo-label>
